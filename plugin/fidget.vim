@@ -47,10 +47,11 @@ endfu
 fu! s:start_vim_fidget()
     " load the files
     call s:startDaemon()
-    tabnew
-    exe 'e '.g:fidget_files_path.'/index.html'
-    exe 'split '.g:fidget_files_path.'/main.js'
+    " tabnew
+    exe 'e '.g:fidget_files_path.'/main.js'
+    exe 'belowright split '.g:fidget_files_path.'/index.html'
     exe 'vsplit '.g:fidget_files_path.'/main.css'
+    exe 'resize -25'
     " # Define the autocmds "
     aug fidget-start_commands
         au!
